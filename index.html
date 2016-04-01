@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Dynamo Packages</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<base href="/">
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.0.0/normalize.min.css">
+		<link rel="stylesheet" type="text/css" href="http://getbootstrap.com/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="dist/css/main.css"/>
+	</head>
+	<body>
+		<my-app>Loading...</my-app>
+
+
+
+
+
+
+
+
+
+		<!-- Script -->
+		<script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+		<script src="node_modules/systemjs/dist/system.src.js"></script>
+		<script src="node_modules/rxjs/bundles/Rx.js"></script>
+		<script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+		<script src="node_modules/angular2/bundles/router.dev.js"></script>
+
+		<script>
+			System.config({
+				"baseURL": "/",
+				packages: {
+					'dist/js': {
+						main 				: "main",
+						defaultJSExtensions : true
+					}
+				}
+			});
+			System.import('dist/js').then(null, console.error.bind(console));
+		</script>
+	</body>
+</html>

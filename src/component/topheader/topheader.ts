@@ -1,0 +1,12 @@
+// Libraries
+import {Component}         from 'angular2/core';
+import {ROUTER_DIRECTIVES} from 'angular2/router';
+
+import {SearchComponent} from '../search-component/search-component';
+
+@Component({
+    selector    : 'topheader',
+    templateUrl : 'dist/component/topheader/topheader.html',
+    directives: [SearchComponent, ROUTER_DIRECTIVES]
+})
+export class TopHeader { }
