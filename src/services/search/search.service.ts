@@ -1,6 +1,21 @@
+import {Component, Injectable, Inject}               from 'angular2/core';
+import {RouteConfig, ROUTER_DIRECTIVES, RouteParams, ROUTER_PROVIDERS} from 'angular2/router';
+import {Http, Response, Headers, BaseRequestOptions} from 'angular2/http';
+
 export class SearchService{
 	
-	constructor(argument) {
-		console.log('search service initiated');
+	resdata: Object;
+	constructor( @Inject(Http) private http: Http) { }
+	createAuthorizationHeader(headers: Headers) {
+		headers.append('X-AFC', 'FJKB32');
+		//headers.append('X-Session', TOKENKEY);
+	}
+	getAssetsList() {
+		let headers = new Headers();
+		this.createAuthorizationHeader(headers);
+		var path = 'https://api.acg.autodesk.com/api/v2/assets/';
+		return this.http.get(path, {
+			headers: headers
+		})
 	}
 }

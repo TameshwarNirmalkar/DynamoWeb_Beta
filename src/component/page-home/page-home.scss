@@ -16,7 +16,7 @@
 	}
 }
 .full-circle {
-	 background-color: #4893B5;
+	 background-color: rgba(0,0,0,.5);
 	 @include fullcircle(75);
 }
 .distance_in_between{

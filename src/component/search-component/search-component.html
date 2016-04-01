@@ -1,5 +1,24 @@
 <div class="container-fluid">
-	<span style="display: inline-flex;">
+	<div style="display: inline-flex;">
 		<input type="search" class="form-control" value="" title="Search" placeholder="Search packages for nodes">
-	</span>
+	</div>
+	<div class="popupdiv">
+		<ul>
+			<li *ngFor="#a of assetsList">
+				<div class="" style="float: left;">
+					<img src="https://static.spark.autodesk.com/{{ a.asset_image}}" alt="" height="64" style="border:1px solid #333; margin-right: 10px;">
+				</div>
+				<div style="display: flex; justify-content: space-between;">
+					<span class="text-left">
+						<p> {{ a.asset_name}} </p>
+						<sub>{{ a.artist_name}}</sub>
+					</span>
+					<span class="text-right">
+						<a href="">Download</a>
+						{{ a.asset_id }}
+					</span>
+				</div>
+			</li>
+		</ul>
+	</div>
 </div>

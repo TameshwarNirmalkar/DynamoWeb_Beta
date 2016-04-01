@@ -1,9 +1,13 @@
 // Libraries
 import {Component} from 'angular2/core';
 import {SliderComponent}  from '../slider-component/slider-component';
+import {RouteConfig, ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 
 @Component({
     templateUrl  : 'dist/component/page-home/page-home.html',
-    directives: [SliderComponent]
+    directives: [SliderComponent, ROUTER_DIRECTIVES]
 })
-export class HomePageComponent { }
+export class HomePageComponent { 
+	constructor() {
+    }
+}

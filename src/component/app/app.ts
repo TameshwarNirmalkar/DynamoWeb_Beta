@@ -9,7 +9,7 @@ import {AboutPageComponent}  from '../page-about/page-about';
 import {TopHeader}  from '../topheader/topheader';
 import {RegisterComponent}  from '../register-component/register-component';
 import {SignInComponent}  from '../sign-in-component/sign-in-component';
-
+import {SearchComponent}  from '../search-component/search-component';
 
 @Component({
 	selector    : 'my-app',
@@ -36,6 +36,11 @@ import {SignInComponent}  from '../sign-in-component/sign-in-component';
 		path: '/signin',
 		name: 'SignIn',
 		component: SignInComponent
+	},
+	{
+		path: '/search',
+		name: 'Search',
+		component: SearchComponent
 	}
 
 ])
