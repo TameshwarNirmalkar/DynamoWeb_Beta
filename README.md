@@ -1,4 +1,4 @@
-# Angular2 SASS GULP Boilerplate
+﻿# Dynamo Web
 
 ## Dependencies
 
@@ -41,4 +41,4 @@ Also many thanks to everyone who will use and test this and report issues.
 
 ## License
 
-Licensed under the MIT license. Created by [André Kirchner](http://cureon.de/)
+Licensed under the MIT license. Created by [Tameshwar]
