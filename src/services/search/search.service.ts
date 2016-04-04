@@ -10,10 +10,25 @@ export class SearchService{
 		headers.append('X-AFC', 'FJKB32');
 		//headers.append('X-Session', TOKENKEY);
 	}
+	/**
+		@ GET: all the packages list 
+	*/
 	getAssetsList() {
 		let headers = new Headers();
 		this.createAuthorizationHeader(headers);
 		var path = 'https://api.acg.autodesk.com/api/v2/assets/';
+		return this.http.get(path, {
+			headers: headers
+		})
+	}
+
+	/**
+		@ GET: get a packages 
+	*/
+	getAnAsset(id:Number) {
+		let headers = new Headers();
+		this.createAuthorizationHeader(headers);
+		var path = 'https://api.acg.autodesk.com/api/v2/assets/'+id;
 		return this.http.get(path, {
 			headers: headers
 		})

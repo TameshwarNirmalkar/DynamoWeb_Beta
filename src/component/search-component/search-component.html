@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid hidden">
 	<div style="display: inline-flex;">
 		<input type="search" class="form-control" value="" title="Search" placeholder="Search packages for nodes">
 	</div>
@@ -22,3 +22,43 @@
 		</ul>
 	</div>
 </div>
+<div class="container-fluid" style="background-color:#fcfcfc;">
+		<h2>Search New Packages</h2>
+		<div class="col-lg-6">
+			
+			<div style="border:1px solid #5D5D5D; background-color:#2F2F2F; color: #999;">
+				<span>
+					<input type="text" name="" value="" placeholder="Search packages" style="background-color: #474747; border:none; width: 80%;">
+				</span>
+				<span>A-Z</span>
+			</div>
+			<div class="searchpanel">
+				<ul style="margin:0px; padding: 0px; list-style: none;">
+					<li *ngFor="#a of assetsList" class="listdisplay" (click)="getanassets($event,a.asset_id)">
+						<div class="" style="float: left;">
+							<img src="https://static.spark.autodesk.com/{{ a.asset_image}}" alt="" height="64" style="border:1px solid #5D5D5D; margin-right: 10px;">
+						</div>
+						<div style="display: flex; justify-content: space-between;">
+							<span class="text-left">
+								<p> {{ a.asset_name}} </p>
+								<sub>{{ a.artist_name}}</sub>
+							</span>
+							<span class="text-right">
+								<a href="">Download</a>
+								{{ a.asset_id }}
+							</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="col-lg-6">
+			<ul style="margin:0px; padding: 0px; list-style: none;">
+				<li class="listdisplay" *ngIf="singleList">
+					<p>{{ singleList.asset_name }}</p>
+					<p>{{ singleList.description }}</p>
+				</li>
+			</ul>
+		</div>
+	</div>
