@@ -21,7 +21,7 @@ It's a good idea to always use the latest version of Angular2 - but there might 
 
 Run the plugin from the command palette:
 
-A. Simple build 'gulp' --> this will run the default task
+A. Simple build 'gulp' --> this will run the default task 
 
 B. GULP Server with some basic file watching 'gulp serve'
 
@@ -29,7 +29,7 @@ B. GULP Server with some basic file watching 'gulp serve'
 
 This boilerplate has been implemented on Windows 8.1 using Sublime 3 and TypeScript.
 
-Please [create an issue](https://github.com/cureon/angular2-sass-gulp-boilerplate/issues) if you find it doesn't work as expected on your setup.
+Please [create an issue](https://github.com/TameshwarNirmalkar/DynamoWeb_Beta/issues) if you find it doesn't work as expected on your setup.
 
 ## Contribution
 
