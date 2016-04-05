@@ -16,7 +16,7 @@ export class SearchService{
 	getAssetsList() {
 		let headers = new Headers();
 		this.createAuthorizationHeader(headers);
-		var path = 'https://api.acg.autodesk.com/api/v2/assets/';
+		var path = 'https://beta-login-123d.acg.autodesk.com/api/v2/assets/';
 		return this.http.get(path, {
 			headers: headers
 		})
@@ -28,7 +28,7 @@ export class SearchService{
 	getAnAsset(id:String) {
 		let headers = new Headers();
 		this.createAuthorizationHeader(headers);
-		var path = 'https://api.acg.autodesk.com/api/v2/assets/'+id;
+		var path = 'https://beta-login-123d.acg.autodesk.com/api/v2/assets/' + id;
 		return this.http.get(path, {
 			headers: headers
 		})
