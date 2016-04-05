@@ -25,7 +25,7 @@ export class SearchService{
 	/**
 		@ GET: get a packages 
 	*/
-	getAnAsset(id:Number) {
+	getAnAsset(id:String) {
 		let headers = new Headers();
 		this.createAuthorizationHeader(headers);
 		var path = 'https://api.acg.autodesk.com/api/v2/assets/'+id;

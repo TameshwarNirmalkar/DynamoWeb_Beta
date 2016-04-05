@@ -22,6 +22,7 @@ It's a good idea to always use the latest version of Angular2 - but there might 
 Run the plugin from the command palette:
 
 A. Simple build 'gulp' --> this will run the default task
+
 B. GULP Server with some basic file watching 'gulp serve'
 
 ## Issues

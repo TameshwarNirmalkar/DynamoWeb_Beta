@@ -38,7 +38,7 @@ import {SearchComponent}  from '../search-component/search-component';
 		component: SignInComponent
 	},
 	{
-		path: '/search',
+		path: '/search/:asset_id',
 		name: 'Search',
 		component: SearchComponent
 	}

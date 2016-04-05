@@ -79,14 +79,15 @@ gulp.task('serve', ['compile-ts', 'styles', 'views', 'watch'], function() {
 	process.stdout.write('Starting browserSync and superstatic...\n');
 	browserSync({
 		port 			: 5555,
-		files 			: ['**/*.html', '**/*+(scss|sass)', '**/*.js'],
+		files 			: ['./app/**/*.html', './app/**/*+(scss|sass)', './app/**/*.js'],
 		injectChanges 	: true,
 		logFileChanges 	: false,
 		logLevel 		: 'silent',
-		logPrefix 		: 'angular2typescript',
+		logPrefix 		: 'Dynamo package',
 		notify 			: true,
 		reloadDelay 	: 0,
 		server 			: {
+			online: false,
 			baseDir: './dist',
 			middleware: superstatic({ 
 				debug: true
