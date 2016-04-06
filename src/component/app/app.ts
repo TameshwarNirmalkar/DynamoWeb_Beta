@@ -25,11 +25,6 @@ import {SearchComponent}  from '../search-component/search-component';
 		name      : 'Home',
 		component : HomePageComponent
 	},
-	{ 
-		path      : '/about',
-		name      : 'About',
-		component : AboutPageComponent
-	},
 	{
 		path: '/register',
 		name: 'Register',
@@ -41,8 +36,8 @@ import {SearchComponent}  from '../search-component/search-component';
 		component: SignInComponent
 	},
 	{
-		path: '/search',
-		name: 'Search',
+		path: '/assets',
+		name: 'Assets',
 		component: SearchComponent
 	}
 ])
