@@ -6,11 +6,11 @@
 					<span>
 						<input type="text" name="" value="" placeholder="Search packages" style="background-color: #474747; border:none; width: 80%;">
 					</span>
-					<span>A-Z</span>
+					<span (click)="sortOrder('+asset_name')" role="button"> A-Z</span>
 				</div>
 				<div class="searchpanel pull-left" style="width:100%">
 					<ul style="margin:0px; padding: 0px; list-style: none; width: inherit;">
-						<li *ngFor="#a of assetsList | orderBy: ['asset_name'] " role="button" style="width: inherit;" class="listdisplay pull-left" [routerLink]="['Search', {asset_id: a.asset_id}]" [class.active]="isRouteActive(['Search', {asset_id: a.asset_id}])">
+						<li *ngFor="#a of assetsList | orderBy:[predicate]" role="button" style="width: inherit;" class="listdisplay pull-left" [routerLink]="['Search', {asset_id: a.asset_id}]" [class.active]="isRouteActive(['Search', {asset_id: a.asset_id}])">
 							<span class="pull-left" style="padding: 5px; display: inline-block;">
 								<img src="https://static.spark.autodesk.com/{{ a.asset_image}}" alt="" height="64">
 							</span>

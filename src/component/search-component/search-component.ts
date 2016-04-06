@@ -19,7 +19,8 @@ export class SearchComponent {
 	private singleList: Object;
 	private asset_id: String;
 	private platform: String;
-
+	private reverse: Boolean = true;
+	public predicate: String = '+asset_name'
 	constructor(private _SearchList: SearchService, public params: RouteParams, private router: Router) {
 		_SearchList.getAssetsList().map(res => res.json()).subscribe(assetsdata => {
 			this.assetsList = assetsdata.assets;
@@ -43,5 +44,17 @@ export class SearchComponent {
 
 	getPlatform(){
 		return this.platform;
+	}
+
+	sortOrder(v){
+		// this.reverse = (this.predicate === v) ? !this.reverse : false;
+		// this.predicate = v;
+        if(this.predicate === v){
+			this.predicate = '-asset_name';
+        }
+        else{
+			this.predicate = '+asset_name';
+        }
+        
 	}
 }
