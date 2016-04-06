@@ -1,15 +1,9 @@
 <div class="container-fluid">
 	<div class="row">
-		<topheader></topheader>
-		<main>
+		<div *ngIf="platform === 'Web'"> <topheader></topheader> </div>
+		<container>
 			<router-outlet></router-outlet>
-		</main>		
+		</container>		
 	</div>
 </div>
-<footer class="footer">
-	<div class="container-fluid verticalmiddle">
-		<div class="row tabel-cell">
-			Powered by Globant			
-		</div>
-	</div>
-</footer>
+<footer-component *ngIf="platform === 'Web'"> </footer-component>

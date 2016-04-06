@@ -1,8 +1,8 @@
 import {Component, Inject}               from 'angular2/core';
 import {Router, RouteConfig, ROUTER_DIRECTIVES, RouteParams, ROUTER_PROVIDERS, RouterLink} from 'angular2/router';
-import {SearchService} from '../../services/search/search.service';
 import {NgFor, NgIf, NgClass} from 'angular2/common';
 
+import {SearchService} from '../../services/search/search.service';
 import {OrderBy} from "../../pipes/orderBy/orderBy"
 
 
@@ -17,27 +17,31 @@ import {OrderBy} from "../../pipes/orderBy/orderBy"
 export class SearchComponent {
 	private assetsList: Array<Object>;
 	private singleList: Object;
-	public asset_id: String;
-	//public router: Router;
-	
+	private asset_id: String;
+	private platform: String;
 
-	constructor(public _SearchList: SearchService, public params: RouteParams, private router: Router) {
+	constructor(private _SearchList: SearchService, public params: RouteParams, private router: Router) {
 		_SearchList.getAssetsList().map(res => res.json()).subscribe(assetsdata => {
 			this.assetsList = assetsdata.assets;
-			console.log(this.params.get('asset_id'));
+			this.platform = this.params.get('platform');
 			this.asset_id = this.params.get('asset_id');
-			this.getanassets(this.asset_id);
+			if (this.asset_id !== null){
+			 	this.getanassets(this.asset_id);
+			}
 		});
 	}
 
-	getanassets(id:String){
-		console.log(this.params.get('asset_id'));
+	getanassets(id: String) {
 		this._SearchList.getAnAsset(id).map(res => res.json()).subscribe(a => {
 			this.singleList = a;
 		});
 	}
-
+	
 	isRouteActive(route) {
 		return this.router.isRouteActive(this.router.generate(route));
+	}
+
+	getPlatform(){
+		return this.platform;
 	}
 }

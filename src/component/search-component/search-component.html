@@ -1,27 +1,3 @@
-<div class="container-fluid hidden">
-	<div style="display: inline-flex;">
-		<input type="search" class="form-control" value="" title="Search" placeholder="Search packages for nodes">
-	</div>
-	<div class="popupdiv">
-		<ul>
-			<li *ngFor="#a of assetsList">
-				<div class="" style="float: left;">
-					<img src="https://static.spark.autodesk.com/{{ a.asset_image}}" alt="" height="64" style="border:1px solid #333; margin-right: 10px;">
-				</div>
-				<div style="display: flex; justify-content: space-between;">
-					<span class="text-left">
-						<p> {{ a.asset_name}} </p>
-						<sub>{{ a.artist_name}}</sub>
-					</span>
-					<span class="text-right">
-						<a href="">Download</a>
-						{{ a.asset_id }}
-					</span>
-				</div>
-			</li>
-		</ul>
-	</div>
-</div>
 <div class="container-fluid" style="background-color:#fcfcfc;">
 		<h2>Search New Packages</h2>
 		<div class="col-lg-6">
@@ -34,7 +10,7 @@
 				</div>
 				<div class="searchpanel pull-left" style="width:100%">
 					<ul style="margin:0px; padding: 0px; list-style: none; width: inherit;">
-						<li *ngFor="#a of assetsList | orderBy: ['asset_name'] " style="width: inherit;" class="listdisplay pull-left" [routerLink]="['Search', {asset_id: a.asset_id}]" [class.active]="isRouteActive(['Search', {asset_id: a.asset_id}])">
+						<li *ngFor="#a of assetsList | orderBy: ['asset_name'] " role="button" style="width: inherit;" class="listdisplay pull-left" [routerLink]="['Search', {asset_id: a.asset_id}]" [class.active]="isRouteActive(['Search', {asset_id: a.asset_id}])">
 							<span class="pull-left" style="padding: 5px; display: inline-block;">
 								<img src="https://static.spark.autodesk.com/{{ a.asset_image}}" alt="" height="64">
 							</span>
